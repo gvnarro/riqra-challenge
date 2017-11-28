@@ -26,11 +26,17 @@ class App extends Component {
     }
 
     this.onChange = this.onChange.bind(this)
+    this.clearTextArea = this.clearTextArea.bind(this)
 
   }
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
+    })
+  }
+  clearTextArea(){
+    this.setState({
+      thought: ''
     })
   }
   render() {
@@ -53,7 +59,7 @@ class App extends Component {
                 value={ this.state.thought }
                 onChange={ this.onChange }/>
               <br /><br />
-              <NewEntry name="Jean Alessi Reynoso" thought={this.state.thought}/>
+              <NewEntry name="Jean Alessi Reynoso" thought={this.state.thought} clear={this.clearTextArea}/>
             </form>
           </div>
         </div>
