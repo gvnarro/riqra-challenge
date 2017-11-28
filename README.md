@@ -61,12 +61,8 @@ Riqra Challenge
 
 ## Sample GraphQL Queries
 
-<table width="100%" style="width: 100%">
-    <tbody>
-        <tr valign="top" width="100%" style="width: 100%">
-            <td width="50%" style="width: 50%">
-                <p>Query - Get List</p>
-                <pre>
+```graphql
+
 query {
   thoughts {
     id,
@@ -74,35 +70,7 @@ query {
     thought
   }
 }
-                </pre>
-            </td>
-            <td width="50%" style="width: 50%">
-                <p>Response</p>
-                <pre>
-{
-  "data": {
-    "thoughts": [
-      {
-        "id": 1,
-        "name": "Jean Reynoso",
-        "thought": "Testing"
-      },
-      {
-        "id": 2,
-        "name": "Pablo",
-        "thought": "I know nothing"
-      }
-    ]
-  }
-}
-                </pre>
-            </td>
-        </tr>
-        <tr></tr>
-        <tr valign="top">
-            <td>
-                <p>Query - Get by Param</p>
-                <pre>
+
 query {
   thought(id: 1) {
     id,
@@ -110,28 +78,7 @@ query {
     thought
   }
 }
-                </pre>
-            </td>
-            <td>
-                <p>Response</p>
-                <pre>
-{
-  "data": {
-    "thought": {
-      "id": 1,
-      "name": "Jean Reynoso",
-      "thought": "Testing"
-    }
-  }
-}
-                </pre>
-            </td>
-        </tr>
-        <tr></tr>
-        <tr valign="top">
-            <td>
-                <p>Mutation - Create</p>
-                <pre>
+
 mutation {
   thoughtCreate(
     name: "Eberth", 
@@ -140,45 +87,10 @@ mutation {
     id
   }
 }
-                </pre>
-            </td>
-            <td>
-                <p>Response</p>
-                <pre>
-{
-  "data": {
-    "thoughtCreate": {
-      "id": 3
-    }
-  }
-}
-                </pre>
-            </td>
-        </tr>
-        <tr></tr>
-        <tr valign="top">
-            <td>
-                <p>Mutation - Remove</p>
-                <pre>
+
 mutation {
   thoughtRemove(id: 3) {
     id
   }
 }
-                </pre>
-            </td>
-            <td>
-                <p>Response</p>
-                <pre>
-{
-  "data": {
-    "thoughtRemove": {
-      "id": null
-    }
-  }
-}
-                </pre>
-            </td>
-        </tr>
-    </tbody>
-</table>
+```
