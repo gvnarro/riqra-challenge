@@ -38,7 +38,10 @@ Riqra Challenge
       │   ├── public
       │   ├── src
       │   │   ├── components
-      │   │   ├── setup
+      │   │   ├── images
+      │   │   ├── mutations
+      │   │   ├── querys
+      │   │   ├── styles
       │   │   └── index.js
       │   │
       │   ├── .env
@@ -55,3 +58,127 @@ Riqra Challenge
   - Copy `/backend/src/schema/thoughts` to `/backend/src/schema/users` and modify `type.js`, `resolvers.js` and `fields/query.js` and `fields/mutations.js`
   - Import `/backend/src/schema/users/fields/query.js` in `/backend/src/schema/query.js`
   - Import `/backend/src/schema/users/fields/mutations.js` in `/backend/src/schema/mutations.js`
+
+## Sample GraphQL Queries
+
+<table width="100%" style="width: 100%">
+    <tbody>
+        <tr valign="top">
+            <td width="50%" style="width: 50%">
+                <p>Query - Get List</p>
+                <pre>
+query {
+  thoughts {
+    id,
+    name,
+    thought
+  }
+}
+                </pre>
+            </td>
+            <td width="50%" style="width: 50%">
+                <p>Response</p>
+                <pre>
+{
+  "data": {
+    "thoughts": [
+      {
+        "id": 1,
+        "name": "Jean Reynoso",
+        "thought": "Testing"
+      },
+      {
+        "id": 2,
+        "name": "Pablo",
+        "thought": "I know nothing"
+      }
+    ]
+  }
+}
+                </pre>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr valign="top">
+            <td>
+                <p>Query - Get by Param</p>
+                <pre>
+query {
+  thought(id: 1) {
+    id,
+    name,
+    thought
+  }
+}
+                </pre>
+            </td>
+            <td>
+                <p>Response</p>
+                <pre>
+{
+  "data": {
+    "thought": {
+      "id": 1,
+      "name": "Jean Reynoso",
+      "thought": "Testing"
+    }
+  }
+}
+                </pre>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr valign="top">
+            <td>
+                <p>Mutation - Create</p>
+                <pre>
+mutation {
+  thoughtCreate(
+    name: "Eberth", 
+    thought:"Testing Testing"
+  ) {
+    id
+  }
+}
+                </pre>
+            </td>
+            <td>
+                <p>Response</p>
+                <pre>
+{
+  "data": {
+    "thoughtCreate": {
+      "id": 3
+    }
+  }
+}
+                </pre>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr valign="top">
+            <td>
+                <p>Mutation - Remove</p>
+                <pre>
+mutation {
+  thoughtRemove(id: 3) {
+    id
+  }
+}
+                </pre>
+            </td>
+            <td>
+                <p>Response</p>
+                <pre>
+{
+  "data": {
+    "thoughtRemove": {
+      "id": null
+    }
+  }
+}
+                </pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
