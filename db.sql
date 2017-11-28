@@ -1,0 +1,1 @@
+create database riqra_challenge
