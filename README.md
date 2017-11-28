@@ -64,7 +64,7 @@ Riqra Challenge
 <table width="100%" style="width: 100%">
     <tbody>
         <tr valign="top">
-            <td width="60%" style="width: 60%">
+            <td width="50%" style="width: 50%">
                 <p>Query - Get List</p>
                 <pre>
 query {
@@ -76,7 +76,7 @@ query {
 }
                 </pre>
             </td>
-            <td width="40%" style="width: 40%">
+            <td width="50%" style="width: 50%">
                 <p>Response</p>
                 <pre>
 {
