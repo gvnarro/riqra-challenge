@@ -64,7 +64,7 @@ Riqra Challenge
 <table width="100%" style="width: 100%">
     <tbody>
         <tr valign="top">
-            <td width="50%" style="width: 50%">
+            <td width="70%" style="width: 70%">
                 <p>Query - Get List</p>
                 <pre>
 query {
